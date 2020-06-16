@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { bindActionCreators } from 'redux'
 
 export const READ_EVENTS = 'READ_EVENTS'
 
@@ -7,5 +8,6 @@ const QUERYSTRING = '?token=token123'
 
 export const readEvents = () => async dispatch => {
   const response = await axios.get(`${ROOT_URL}/events${QUERYSTRING}`)
+  // ActionCreators
   dispatch({ type: READ_EVENTS, response })
 }
